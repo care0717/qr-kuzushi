@@ -1,10 +1,14 @@
 module Common exposing (Model, Msg(..))
 
+import QRCode exposing (ErrorCorrection)
+
 
 type alias Model =
-    Int
+    { content : String
+    , errorCorrection : ErrorCorrection
+    }
 
 
 type Msg
-    = Increment
-    | Decrement
+    = Change String
+    | Select ErrorCorrection

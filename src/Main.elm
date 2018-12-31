@@ -2,6 +2,7 @@ module Main exposing (init, main)
 
 import Browser
 import Common exposing (Model)
+import QRCode
 import Update exposing (update)
 import View exposing (view)
 
@@ -12,4 +13,4 @@ main =
 
 init : Model
 init =
-    0
+    { content = "", errorCorrection = QRCode.Low }

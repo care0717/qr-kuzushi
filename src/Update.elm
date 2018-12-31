@@ -6,8 +6,8 @@ import Common exposing (Model, Msg(..))
 update : Msg -> Model -> Model
 update msg model =
     case msg of
-        Increment ->
-            model + 1
+        Change newContent ->
+            { model | content = newContent }
 
-        Decrement ->
-            model - 1
+        Select ec ->
+            { model | errorCorrection = ec }
