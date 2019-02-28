@@ -8,7 +8,7 @@
 -}
 
 
-module ErrorCorrection exposing (Polynomial, get, getECPolynomial, getExp, unsafeGetLog)
+module ErrorCorrection exposing (Polynomial, get, getECPolynomial, getExp, mod, unsafeGetLog)
 
 import Array exposing (Array)
 import Bitwise

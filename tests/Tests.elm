@@ -86,6 +86,16 @@ suite =
                             [ [ 32, 65, 205, 69, 41, 220, 46, 128, 236 ] ]
                     in
                     Expect.equal (Result.Ok [ [ 42, 159, 74, 221, 244, 169, 239, 150, 138, 70, 237, 85, 224, 96, 74, 219, 61 ] ]) (ErrorCorrection.get 17 input)
+            , test "can mod" <|
+                \_ ->
+                    let
+                        p1 =
+                            Array.fromList [ 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+
+                        p2 =
+                            Array.fromList [ 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1 ]
+                    in
+                    Expect.equal (Result.Ok <| Array.fromList [ 42, 159, 74, 221, 244, 169, 239, 150, 138, 70, 237, 85, 224, 96, 74, 219, 61 ]) (ErrorCorrection.mod p1 p2)
             ]
         , describe "The Decode module"
             [ test "can generate Syndrome if no error" <|
